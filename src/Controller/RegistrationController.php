@@ -18,7 +18,10 @@ class RegistrationController extends AbstractController
     {
         // 1) build the form
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+
+        $form = $this->createForm(UserType::class, $user, [
+            'validation_groups' => array('User', 'registration'),
+        ]);
 
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);

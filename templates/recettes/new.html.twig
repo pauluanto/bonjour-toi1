@@ -10,7 +10,7 @@
     {% block content %}
 
 
-{% block title %} Ajouter une recette {% endblock %}
+{% block title %} Ajouter votre profil {% endblock %}
 
 {% block body %}
     <a class="btn btn-primary" href="{{ path('recettes.index') }}">Revenir</a>
@@ -19,87 +19,83 @@
         <fieldset>
             {{ form_start(form) }}
             <div class="form-group">
-                {{ form_label(form.nom, 'Nom de la recette', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                {{ form_label(form.title, 'Le titre', {'attr': {'class': 'col-md-4 control-label'}} ) }}
                 <div class="col-md-5">
-                    {{ form_widget(form.nom, {'attr': {'placeholder': 'Nom de la recette', 'class': 'form-control input-md'}}) }}
+                    {{ form_widget(form.title, {'attr': {'placeholder': 'Titre de votre profil', 'class': 'form-control input-md'}}) }}
                 </div>
             </div>
 
             <div class="form-group">
-                {{ form_label(form.typeplat, 'Type de plat', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                {{ form_label(form.description, 'Description', {'attr': {'class': 'col-md-4 control-label'}} ) }}
                 <div class="col-md-5">
-                    {{ form_widget(form.typeplat, {'attr': {'placeholder': 'Type de plat', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                {{ form_label(form.difficulte, 'Difficulte', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.difficulte, {'attr': {'placeholder': '0 à 10', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                {{ form_label(form.cout, 'Cout du plat', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.cout, {'attr': {'placeholder': 'Cout du plat', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                {{ form_label(form.preparation, 'Temps de préparation', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.preparation, {'attr': {'placeholder': 'Temps de préparation', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.cuisson, 'Temps de cuisson', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.cuisson, {'attr': {'placeholder': 'Temps de cuisson', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.typecuisson, 'Type de cuisson', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.typecuisson, {'attr': {'placeholder': 'Type de cuisson', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.ingredient, 'Ingrédients de la recette', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.ingredient, {'attr': {'placeholder': 'Ingrédient', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.etape, 'Etape de la recette', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.etape, {'attr': {'placeholder': 'Décrivez votre étape de la recette', 'class': 'form-control input-md'}}) }}
+                    {{ form_widget(form.description, {'attr': {'placeholder': 'description', 'class': 'form-control input-md'}}) }}
                 </div>
             </div>
 
 
             <div class="form-group">
-                {{ form_label(form.boisson, 'Boisson conseillé avec le plat', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                {{ form_label(form.citation, 'Citation', {'attr': {'class': 'col-md-4 control-label'}} ) }}
                 <div class="col-md-5">
-                    {{ form_widget(form.boisson, {'attr': {'placeholder': 'Boisson', 'class': 'form-control input-md'}}) }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.remarque, 'Autres remarques', {'attr': {'class': 'col-md-4 control-label'}} ) }}
-                <div class="col-md-5">
-                    {{ form_widget(form.remarque, {'attr': {'placeholder': 'Autres remarques', 'class': 'form-control input-md'}}) }}
+                    {{ form_widget(form.citation, {'attr': {'placeholder': '0 à 10', 'class': 'form-control input-md'}}) }}
                 </div>
             </div>
 
             <div class="form-group">
-                {{ form_label(form.user, 'Auteur', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                {{ form_label(form.poid, 'Votre poid', {'attr': {'class': 'col-md-4 control-label'}} ) }}
                 <div class="col-md-5">
-                    {{ form_widget(form.user, {'attr': {'class': 'form-control input-md'}}) }}
+                    {{ form_widget(form.poid, {'attr': {'placeholder': 'poid', 'class': 'form-control input-md'}}) }}
                 </div>
             </div>
+
+            <div class="form-group">
+                {{ form_label(form.taille, 'Votre taille', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.taille, {'attr': {'placeholder': 'Taille', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.age, 'Votre age', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.age, {'attr': {'placeholder': 'votre age', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.sexe, 'sexe', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.sexe, {'attr': {'placeholder': 'sexe', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.musique, 'musique', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.musique, {'attr': {'placeholder': 'musique', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.film, 'film', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.film, {'attr': {'placeholder': 'film', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                {{ form_label(form.livre, 'livre', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.livre, {'attr': {'placeholder': 'livre', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.activitefavorite, 'activité favorite', {'attr': {'class': 'col-md-4 control-label'}} ) }}
+                <div class="col-md-5">
+                    {{ form_widget(form.activitefavorite, {'attr': {'placeholder': 'activite favorite', 'class': 'form-control input-md'}}) }}
+                </div>
+            </div>
+
+
+
         </fieldset>
-        <button type="submit">Soumettre ma recette!</button>
+        <button type="submit">Soumettre mon profil</button>
         {{ form_end(form) }}
     </section>
 

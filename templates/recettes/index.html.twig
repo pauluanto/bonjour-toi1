@@ -3,33 +3,33 @@
 {% block title 'Bienvenue chez Marmiton' %}
 {% block body %}
     <div class="jumbotron text-center">
-        <h1>Recettes Marmiton</h1>
-        <p>Toutes les recettes</p>
+        <h1>Profil des TOI</h1>
+        <p>Tous les TOI du monde </p>
     </div>
 
-    <a class="btn btn-primary" href="{{ path('recettes.new') }}">Créer une nouvelle recette</a>
+    <a class="btn btn-primary" href="{{ path('recettes.new') }}">Créer votre profil</a>
     <div>
 
         {% for recette in recettes %}
         <ul>
             <li>
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-success">Nom de la recette : {{ recette.nom }}</li>
+                    <li class="list-group-item list-group-item-success">Nom du titre : {{ recette.title }}</li>
 
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Difficulté : {{ recette.difficulte }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Type de plât : {{ recette.typeplat }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Coût de plât : {{ recette.cout }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Temps de preéparation: {{ recette.preparation }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Temps de cuisson : {{ recette.cuisson }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Type de cuisson : {{ recette.typecuisson }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Les ingrédients : {{ recette.ingredient }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Etape : {{ recette.etape }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Boisson conseillé : {{ recette.boisson }}</a>
-                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Remarque : {{ recette.remarque }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Description : {{ recette.description }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Citation : {{ recette.citation }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Votre poid : {{ recette.poid }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Votre taille: {{ recette.taille }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Votre age : {{ recette.age }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Vous êtes un/une : {{ recette.sexe }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">musique : {{ recette.musique }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">film : {{ recette.film }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Livres : {{ recette.livre }}</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Activités favorites : {{ recette.activitefavorite }}</a>
 
             </li>
         </ul>
         {% endfor %}
-    </div>
+
 
 {% endblock %}

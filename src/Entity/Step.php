@@ -17,7 +17,7 @@ class Step
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Recette", inversedBy="steps")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Recette")
      * @ORM\JoinColumn(nullable=false)
      */
     private $recette;

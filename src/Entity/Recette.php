@@ -20,7 +20,7 @@ class Recette
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recettes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="recette")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
@@ -35,66 +35,69 @@ class Recette
      */
     private $notations;
 
+
     /**
      * @ORM\Column(type="integer")
      */
     private $user_id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $nom;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $typeplat;
-
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $difficulte;
+    private $title;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $cout;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $preparation;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $cuisson;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $typecuisson;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $ingredient;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $etape;
+    private $citation;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $poid;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $taille;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $age;
+
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $boisson;
+    private $sexe;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $remarque;
+    private $musique;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $film;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $livre;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $activitefavorite;
 
 
     public function __construct()
@@ -195,148 +198,155 @@ class Recette
         return $this;
     }
 
-    public function getCategory(): ?Category
+
+
+    public function getTitle(): ?string
     {
-        return $this->category;
+        return $this->title;
     }
 
-    public function setCategory(?Category $category): self
+    public function setTitle(string $title): self
     {
-        $this->category = $category;
+        $this->title = $title;
 
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getDescription(): ?string
     {
-        return $this->nom;
+        return $this->description;
     }
 
-    public function setNom(string $nom): self
+    public function setDescription(string $description): self
     {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getTypeplat(): ?string
-    {
-        return $this->typeplat;
-    }
-
-    public function setTypeplat(string $typeplat): self
-    {
-        $this->typeplat = $typeplat;
+        $this->description = $description;
 
         return $this;
     }
 
 
-    public function getDifficulte(): ?int
+    public function getCitation(): ?string
     {
-        return $this->difficulte;
+        return $this->citation;
     }
 
-    public function setDifficulte(int $difficulte): self
+    public function setCitation(string $citation): self
     {
-        $this->difficulte = $difficulte;
+        $this->citation = $citation;
 
         return $this;
     }
 
-    public function getCout(): ?int
+    public function getPoid(): ?int
     {
-        return $this->cout;
+        return $this->poid;
     }
 
-    public function setCout(int $cout): self
+    public function setPoid(int $poid): self
     {
-        $this->cout = $cout;
+        $this->poid = $poid;
 
         return $this;
     }
 
-    public function getPreparation(): ?int
+    public function getTaille(): ?int
     {
-        return $this->preparation;
+        return $this->taille;
     }
 
-    public function setPreparation(int $preparation): self
+    public function setTaille(int $taille): self
     {
-        $this->preparation = $preparation;
+        $this->taille = $taille;
 
         return $this;
     }
 
-    public function getCuisson(): ?int
+    public function getAge(): ?int
     {
-        return $this->cuisson;
+        return $this->age;
     }
 
-    public function setCuisson(int $cuisson): self
+    public function setAge(int $age): self
     {
-        $this->cuisson = $cuisson;
+        $this->age = $age;
 
         return $this;
     }
 
-    public function getTypecuisson(): ?string
+    public function getSexe(): ?string
     {
-        return $this->typecuisson;
+        return $this->sexe;
     }
 
-    public function setTypecuisson(string $typecuisson): self
+    public function setSexe(string $sexe): self
     {
-        $this->typecuisson = $typecuisson;
+        $this->sexe = $sexe;
 
         return $this;
     }
 
-    public function getIngredient(): ?string
+    /**
+     * @return mixed
+     */
+    public function getMusique(): ?string
     {
-        return $this->ingredient;
+        return $this->musique;
     }
 
-    public function setIngredient(string $ingredient): self
+    /**
+     * @param mixed $musique
+     */
+    public function setMusique($musique): void
     {
-        $this->ingredient = $ingredient;
-
-        return $this;
+        $this->musique = $musique;
     }
 
-    public function getEtape(): ?string
+    /**
+     * @return mixed
+     */
+    public function getFilm(): ?string
     {
-        return $this->etape;
+        return $this->film;
     }
 
-    public function setEtape(string $etape): self
+    /**
+     * @param mixed $film
+     */
+    public function setFilm($film): void
     {
-        $this->etape = $etape;
-
-        return $this;
+        $this->film = $film;
     }
 
-    public function getBoisson(): ?string
+    /**
+     * @return mixed
+     */
+    public function getLivre(): ?string
     {
-        return $this->boisson;
+        return $this->livre;
     }
 
-    public function setBoisson(string $boisson): self
+    /**
+     * @param mixed $livre
+     */
+    public function setLivre($livre): void
     {
-        $this->boisson = $boisson;
-
-        return $this;
+        $this->livre = $livre;
     }
 
-    public function getRemarque(): ?string
+    /**
+     * @return mixed
+     */
+    public function getActivitefavorite(): ?string
     {
-        return $this->remarque;
+        return $this->activitefavorite;
     }
 
-    public function setRemarque(string $remarque): self
+    /**
+     * @param mixed $activitefavorite
+     */
+    public function setActivitefavorite($activitefavorite): void
     {
-        $this->remarque = $remarque;
-
-        return $this;
+        $this->activitefavorite = $activitefavorite;
     }
+
 }

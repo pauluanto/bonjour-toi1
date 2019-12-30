@@ -17,12 +17,12 @@ class Notation
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="notations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Recette", inversedBy="notations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Recette")
      */
     private $recette;
 
